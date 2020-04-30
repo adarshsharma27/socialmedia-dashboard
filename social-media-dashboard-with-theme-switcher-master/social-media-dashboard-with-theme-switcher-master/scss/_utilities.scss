@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+$bg-clr:#fbfafd;
+$dg-bgclr:hsl(230, 17%, 14%);
+$lg-text-clr:hsl(230, 17%, 14%);
+$dg-h3:hsl(228, 34%, 66%);
+$dg-main-h3:hsl(0, 0%, 100%);
+
+$para-clr:hsl(228, 12%, 44%);
+$pri-link:hsl(163, 72%, 41%);
+$sec-link:hsl(356, 69%, 56%);
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    line-height: 1.5rem;
+    font-family:'Inter',sans-serif;
+    background-color:$bg-clr;
+    color:black;
+}
+.grid {
+    display: grid;
+    grid-row-gap:1.5rem;
+    padding:1.5rem 0px ; 
+}
+@mixin column($value) {
+    grid-template-columns:$value;
+}
+
+
+.flex-display{
+margin:0 auto;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-content: center;
+text-align: center;
+background-color: #ffffff;
+border:1px solid #f9f9f9;
+box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+cursor: pointer;
+transition: all 0.5s ease;
+}
+.section-flex{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.h3-heading{
+    color:$lg-text-clr;
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+.h3-section{
+    padding: 0px 0.5rem;
+            font-size: 14px;
+            font-weight: 600;
+}
+.para{
+    color:$para-clr;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing:0.1rem;
+    text-transform: uppercase;
+}
+@mixin clr($value) {
+    color:$value;
+}
+.link{
+    @include clr($pri-link);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.img-icon{
+    width: 12px;
+    height: 9px;
+    margin: 0px 0.3rem;
+}

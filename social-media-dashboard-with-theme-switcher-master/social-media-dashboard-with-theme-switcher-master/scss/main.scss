@@ -1,0 +1,235 @@
+@import "utilities";
+
+aside{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+}
+input[type="checkbox"]{
+    position: relative;
+    width: 58px;
+    height: 28px;
+    -webkit-appearance: none;
+    background-color:hsl(230, 22%, 74%);
+    border-radius:3rem;
+    outline:none;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-image 1s ease;
+
+}
+input[type="checkbox"]:before{
+    position: absolute;
+    content: '';
+    top: 0.2rem;
+    left: 0.2rem;
+    background-color:#fff;
+    border-radius: 60%;
+    width: 22px;
+    height: 22px;
+    transform: translateX(0px);
+    transition: ease 0.5s;
+  
+   
+}
+input:hover{
+    background-image: linear-gradient(35deg, hsl(210, 78%, 56%) , hsl(146, 68%, 55%));
+
+}
+input[type="checkbox"]:checked:before{
+    transform:translateX(30px);
+    background-color:#252232;
+ 
+}
+input[type="checkbox"]:checked   {
+    background-image: linear-gradient(35deg, hsl(210, 78%, 56%) , hsl(146, 68%, 55%));
+}
+
+
+.container{
+.top-container{  
+      @extend .grid;
+    @include column(repeat(auto-fit,minmax(300px,1fr)));
+    
+.card{
+     width:280px;
+     height:235px;
+     line-height: 2.6rem;
+     border-bottom-left-radius: 8px;
+     border-bottom-right-radius: 8px;
+    @extend .flex-display;
+    position: relative;
+     h3{
+      @extend .h3-heading;
+     }
+     p{
+      @extend .para;
+
+    }
+      a{
+         @extend .link;
+        
+          img{
+             @extend .img-icon;
+            
+          }
+      }
+      .sec-link{
+        @include clr($sec-link);
+     }
+      
+     section{
+        @extend .section-flex;
+        justify-content: center;
+        
+    h3{
+           @extend .h3-section; 
+            
+        }
+            }
+ }
+    .facebook{
+        border-top: 3px solid hsl(195, 100%, 50%);
+        
+    }
+    .twitter{
+        border-top: 3px solid hsl(203, 89%, 53%);
+    }
+    .instagram::before{
+        content:'';
+        position: absolute;
+        top:-1px;
+        left:0;
+        width:100%;
+        height:3px;
+        background-image: linear-gradient( 45deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+        
+    }
+    .youtube{
+        border-top: 3px solid hsl(348, 97%, 39%);
+       
+    }
+}
+main{
+  text-align: center;
+   padding:2rem 0px;
+   h2{
+       line-height: 2rem;
+   }
+   h4{
+    color:hsl(228, 12%, 44%);
+    line-height: 2rem;
+   }
+   
+
+}
+.bottom-container{   
+      @extend .grid;
+     @include column(repeat(auto-fit,minmax(280px,1fr)));
+  
+ .card-secondary{
+    width:280px;
+    height:150px;
+    border-radius: 9px;
+    border-top:1px solid transparent;
+    @extend .flex-display;
+    h3{
+        @extend .h3-heading;
+       }
+       p{
+        @extend .para;
+        font-size: 1.5rem;
+        margin-left: -18px;
+      }
+        a{
+           @extend .link;
+          
+            img{
+               @extend .img-icon;
+              
+            }
+        }
+      .sec-link{
+    @include clr($sec-link);
+ }
+   
+    section{
+        @extend .section-flex;
+        justify-content:space-around;
+              
+    h3{
+        @extend .h3-section; 
+         
+     }
+       
+    }  
+      
+}
+
+}
+ 
+.c-hover:hover{
+    background-color: hsl(227, 47%, 96%);
+    border-color: hsl(227, 47%, 96%);
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.21);
+   
+   }
+
+}
+// dark mode
+body.active{
+    background-color:$dg-bgclr;
+    
+}
+.card.active{
+    background-color:hsl(228, 28%, 20%)!important;
+    border-color:hsl(228, 28%, 20%)!important;
+    &:hover{
+        background-color:hsl(228, 27%, 22%)!important;
+    }
+}
+
+.card-secondary.active{
+    background-color:hsl(228, 28%, 20%)!important;
+    border-color:hsl(228, 28%, 20%)!important;
+    &:hover{
+        background-color:#313852 !important;
+    }
+}
+h2.active {
+    color:$dg-main-h3!important;
+}
+    h4.active {
+        color:$dg-main-h3!important;
+    }
+    
+ h3.active {
+    color:$dg-main-h3!important;
+}
+p.active{
+  color:$dg-h3!important;
+}
+// dark mode end
+@media(max-width:768px) {
+    aside{
+        right: 4.5rem;
+    top: 5.5rem;
+    }
+
+}
+@media (max-width:720px)
+{
+    aside{
+        top: 6rem;
+    }
+}
+@media (max-width:420px)
+{
+    main{
+        padding:2.5rem 0px;
+    }
+    aside{
+        top:6.5rem;
+    right: 3.2rem;
+    }
+}
